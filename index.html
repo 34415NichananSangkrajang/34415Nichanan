@@ -1,1 +1,373 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="เว็บไซต์แสดงผลงานและทักษะ Tunwa">
+  <title>ความภาคภูมิใจของ Tunwa // PORTFOLIO</title>
+  
+  <style>
+    /* ─── สไตล์ธีมม่วง-ดำ (CSS) ─── */
+    :root {
+      --bg-color: #06060c;
+      --card-bg: #110c22;
+      --primary-neon: #a124ff;   /* ม่วงนีออน */
+      --secondary-neon: #ff007f; /* ชมพูไซเบอร์ */
+      --text-color: #e2daf0;
+      --text-muted: #847999;
+    }
 
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 60px;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 80% 20%, rgba(161, 36, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(255, 0, 127, 0.08) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    /* แถบเมนูลอยแบบโปร่งแสง (Glassmorphism) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(6, 6, 12, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(161, 36, 255, 0.2);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px;
+    }
+
+    .nav-container a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px var(--primary-neon);
+    }
+
+    /* ส่วนหัวโปรไฟล์ */
+    header {
+      text-align: center;
+      padding: 120px 20px 80px 20px;
+      background: radial-gradient(circle at center, #170b2e 0%, var(--bg-color) 70%);
+      border-bottom: 1px dashed rgba(161, 36, 255, 0.3);
+    }
+
+    /* สไตล์รูปภาพโปรไฟล์ */
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary-neon);
+      box-shadow: 0 0 20px var(--primary-neon), 0 0 40px rgba(161, 36, 255, 0.3);
+      margin-bottom: 20px;
+      transition: transform 0.5s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05) rotate(5deg);
+      border-color: var(--secondary-neon);
+      box-shadow: 0 0 20px var(--secondary-neon), 0 0 40px rgba(255, 0, 127, 0.3);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #fff;
+      text-shadow: 0 0 15px var(--primary-neon), 0 0 30px var(--primary-neon);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--secondary-neon);
+      text-shadow: 0 0 8px var(--secondary-neon);
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* จัดหน้าเซกชัน */
+    section {
+      scroll-margin-top: 90px;
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      border-left: 5px solid var(--primary-neon);
+      padding-left: 15px;
+      margin-bottom: 35px;
+      letter-spacing: 1px;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(161, 36, 255, 0.5);
+    }
+
+    #about p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #cfc5e3;
+    }
+
+    /* การจัดวางกล่องผลงาน */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    @media (max-width: 768px) {
+      .project-grid { grid-template-columns: 1fr; }
+    }
+
+    .project {
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 6px;
+      border: 1px solid rgba(161, 36, 255, 0.15);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 100%;
+      background: linear-gradient(to bottom, var(--primary-neon), var(--secondary-neon));
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: var(--secondary-neon);
+      box-shadow: 0 0 15px rgba(161, 36, 255, 0.3);
+    }
+
+    .project h3 {
+      margin-top: 0;
+      color: #fff;
+      font-size: 1.25rem;
+    }
+
+    .project p {
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* ─── สไตล์สำหรับแฟ้มสะสมผลงาน (Gallery Section) ─── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(161, 36, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--secondary-neon);
+      box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid rgba(161, 36, 255, 0.2);
+    }
+
+    .gallery-info {
+      padding: 15px;
+    }
+
+    .gallery-info h4 {
+      margin: 0 0 8px 0;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    .gallery-info p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* รายการทักษะ */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skills-list li {
+      background: rgba(161, 36, 255, 0.08);
+      border: 1px solid var(--primary-neon);
+      color: #dfb5ff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      box-shadow: inset 0 0 5px rgba(161, 36, 255, 0.2);
+    }
+
+    /* ส่วนท้ายเว็บ */
+    footer {
+      background-color: #030306;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 100px;
+      border-top: 1px solid rgba(161, 36, 255, 0.15);
+    }
+
+    footer p {
+      margin: 12px 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: var(--secondary-neon);
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      text-shadow: 0 0 8px var(--secondary-neon);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#skills">Skills</a>
+    </div>
+  </nav>
+
+  <header>
+    <img src="profile.jpg" alt="Tunwa Profile" class="profile-img">
+    <h1>สวัสดี! ผมคือ Tunwa</h1>
+    <p>นี่คือผลงานความภาคภูมิใจของผม</p>
+  </header>
+
+  <section id="about">
+    <h2>เกี่ยวกับผม</h2>
+    <p>ผมเป็นนักเรียนที่มีความสนใจในภาษาอังกฤษ เทคโนโลยี และการพัฒนาเว็บไซต์ มุ่งมั่นที่จะสร้างสรรค์ผลงานดิจิทัลที่ตอบโจทย์และสวยงาม</p>
+  </section>
+
+  <section id="projects">
+    <h2>ผลงานของผม</h2>
+    <div class="project-grid">
+      <div class="project">
+        <h3>เว็บไซต์ Portfolio</h3>
+        <p>เว็บไซต์นี้เป็นหนึ่งในผลงานที่ผมสร้างขึ้นเพื่อแสดงความสามารถและการออกแบบที่เป็นเอกลักษณ์ของผม</p>
+      </div>
+      <div class="project">
+        <h3>แอปพลิเคชันจัดการงาน</h3>
+        <p>แอปพลิเคชันที่ช่วยให้ผู้ใช้จัดการงานในชีวิตประจำวันได้ดีขึ้น เป็นระบบ สะดวก และใช้งานง่าย</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ส่วนแฟ้มสะสมผลงาน (Gallery Section) ─── -->
+  <section id="gallery">
+    <h2>แฟ้มสะสมผลงาน</h2>
+    <div class="gallery-grid">
+      
+      <div class="gallery-card">
+        <img src="profile.jpg" alt="ภาพกิจกรรม 1" class="gallery-img">
+        <div class="gallery-info">
+          <h4>การแข่งขันทักษะทางเทคโนโลยี</h4>
+          <p>เข้าร่วมการแข่งขันพัฒนาโปรแกรมและเว็บไซต์ระดับโรงเรียน</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="profile.jpg" alt="ภาพกิจกรรม 2" class="gallery-img">
+        <div class="gallery-info">
+          <h4>เกียรติบัตรด้านภาษาอังกฤษ</h4>
+          <p>ได้รับรางวัลในการทดสอบทักษะภาษาอังกฤษประจำปี</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="profile.jpg" alt="ภาพกิจกรรม 3" class="gallery-img">
+        <div class="gallery-info">
+          <h4>กิจกรรมจิตอาสาและวิชาการ</h4>
+          <p>เข้าร่วมกิจกรรมพัฒนาโรงเรียนและแบ่งปันความรู้ให้เพื่อนๆ</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  <section id="skills">
+    <h2>ทักษะของผม</h2>
+    <ul class="skills-list">
+      <li>HTML, CSS, JavaScript</li>
+      <li>Python, Django</li>
+      <li>Git และ GitHub</li>
+      <li>การออกแบบ UI/UX</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>
+      สามารถติดต่อผมได้ที่เบอร์โทรศัพท์: <a href="tel:0823081284">082-3081284</a> <br>
+      หรือทางอีเมล: <a href="mailto:j72016zx2614@gmail.com">j72016zx2614@gmail.com</a>
+    </p>
+    <p>&copy; <span id="year"></span> Tunwa. All rights reserved.</p>
+  </footer>
+        
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>  
+</body>
+</html>
