@@ -3,379 +3,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="เว็บไซต์แสดงผลงานและทักษะด้านสถาปัตยกรรมภายใน ณิชานันท์ แสงกระจ่าง">
-  <title>PORTFOLIO // ณิชานันท์ แสงกระจ่าง - สถาปัตยกรรมภายใน</title>
+  <meta name="description" content="แฟ้มสะสมผลงาน (Portfolio) - ณิชานันท์ แสงกระจ่าง">
+  <title>แฟ้มสะสมผลงาน // PORTFOLIO - ณิชานันท์ แสงกระจ่าง</title>
   
-  <style>
-    /* ─── สไตล์ธีมส้ม KMITL - ดำ (CSS) ─── */
-    :root {
-      --bg-color: #0b0907;       /* ดำโทนอุ่น */
-      --card-bg: #1a1410;       /* น้ำตาลดำเข้มสำหรับการ์ด */
-      --primary-orange: #ff6600; /* สีส้มสถาบัน KMITL */
-      --secondary-amber: #ff9900;/* สีส้มอมทอง/อำพัน */
-      --text-color: #f5ebe6;     /* ขาวนวล */
-      --text-muted: #a69488;    /* เทาน้ำตาลโปร่งแสง */
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      margin: 0;
-      padding-top: 60px;
-      overflow-x: hidden;
-      background-image: 
-        radial-gradient(circle at 80% 20%, rgba(255, 102, 0, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 20% 80%, rgba(255, 153, 0, 0.08) 0%, transparent 50%);
-      background-attachment: fixed;
-    }
-
-    /* แถบเมนูลอยแบบโปร่งแสง (Glassmorphism) */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(11, 9, 7, 0.85);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 102, 0, 0.25);
-      z-index: 1000;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px;
-    }
-
-    .nav-container a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.85rem;
-      transition: all 0.3s ease;
-    }
-
-    .nav-container a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px var(--primary-orange);
-    }
-
-    /* ส่วนหัวโปรไฟล์ */
-    header {
-      text-align: center;
-      padding: 120px 20px 80px 20px;
-      background: radial-gradient(circle at center, #291405 0%, var(--bg-color) 70%);
-      border-bottom: 1px dashed rgba(255, 102, 0, 0.3);
-    }
-
-    /* สไตล์รูปภาพโปรไฟล์ */
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--primary-orange);
-      box-shadow: 0 0 20px var(--primary-orange), 0 0 40px rgba(255, 102, 0, 0.3);
-      margin-bottom: 20px;
-      transition: transform 0.5s ease;
-    }
-
-    .profile-img:hover {
-      transform: scale(1.05) rotate(5deg);
-      border-color: var(--secondary-amber);
-      box-shadow: 0 0 20px var(--secondary-amber), 0 0 40px rgba(255, 153, 0, 0.4);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      font-weight: 900;
-      letter-spacing: 2px;
-      color: #fff;
-      text-shadow: 0 0 15px var(--primary-orange), 0 0 30px var(--primary-orange);
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: var(--secondary-amber);
-      text-shadow: 0 0 8px var(--secondary-amber);
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    /* จัดหน้าเซกชัน */
-    section {
-      scroll-margin-top: 90px;
-      padding: 80px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      border-left: 5px solid var(--primary-orange);
-      padding-left: 15px;
-      margin-bottom: 35px;
-      letter-spacing: 1px;
-      color: #fff;
-      text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
-    }
-
-    #about p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #e6d7ce;
-    }
-
-    /* การจัดวางกล่องผลงาน */
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-
-    @media (max-width: 768px) {
-      .project-grid { grid-template-columns: 1fr; }
-    }
-
-    .project {
-      background: var(--card-bg);
-      padding: 25px;
-      border-radius: 6px;
-      border: 1px solid rgba(255, 102, 0, 0.2);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; width: 4px; height: 100%;
-      background: linear-gradient(to bottom, var(--primary-orange), var(--secondary-amber));
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      border-color: var(--secondary-amber);
-      box-shadow: 0 0 15px rgba(255, 102, 0, 0.35);
-    }
-
-    .project h3 {
-      margin-top: 0;
-      color: #fff;
-      font-size: 1.25rem;
-    }
-
-    .project p {
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 0;
-    }
-
-    /* ─── สไตล์สำหรับแฟ้มสะสมผลงาน (Gallery Section) ─── */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .gallery-card {
-      background: var(--card-bg);
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 102, 0, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .gallery-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--secondary-amber);
-      box-shadow: 0 0 15px rgba(255, 153, 0, 0.35);
-    }
-
-    .gallery-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-      border-bottom: 1px solid rgba(255, 102, 0, 0.2);
-    }
-
-    .gallery-info {
-      padding: 15px;
-    }
-
-    .gallery-info h4 {
-      margin: 0 0 8px 0;
-      color: #fff;
-      font-size: 1.1rem;
-    }
-
-    .gallery-info p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* รายการทักษะ */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .skills-list li {
-      background: rgba(255, 102, 0, 0.1);
-      border: 1px solid var(--primary-orange);
-      color: #ffd0b3;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-      box-shadow: inset 0 0 5px rgba(255, 102, 0, 0.2);
-    }
-
-    /* ส่วนท้ายเว็บ */
-    footer {
-      background-color: #050403;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 100px;
-      border-top: 1px solid rgba(255, 102, 0, 0.2);
-    }
-
-    footer p {
-      margin: 12px 0;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    footer a {
-      color: var(--secondary-amber);
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    footer a:hover {
-      text-shadow: 0 0 8px var(--secondary-amber);
-      text-decoration: underline;
-    }
-  </style>
+  <!-- เชื่อมต่อไฟล์สไตล์ CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- ประกายวิ้งๆ สีทอง (Sparkles background) -->
+  <div class="sparkles-container">
+    <div class="sparkle s1">✨</div>
+    <div class="sparkle s2">⭐</div>
+    <div class="sparkle s3">✨</div>
+    <div class="sparkle s4">🌟</div>
+    <div class="sparkle s5">✨</div>
+    <div class="sparkle s6">⭐</div>
+    <div class="sparkle s7">✨</div>
+    <div class="sparkle s8">🌟</div>
+  </div>
+
+  <!-- แถบเมนูลอยแบบโปร่งแสง (Navbar) -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#skills">Skills</a>
+      <a href="#cover">หน้าปก</a>
+      <a href="#introduction">คำนำ</a>
+      <a href="#profile">ประวัติส่วนตัว</a>
+      <a href="#education">ประวัติการศึกษา</a>
+      <a href="#activities">กิจกรรมที่เข้าร่วม</a>
+      <a href="#future-study">ความสนใจศึกษาต่อ</a>
+      <a href="#skills">ความสามารถพิเศษ / ทักษะ</a>
     </div>
   </nav>
 
-  <header>
-    <img src="profile.jpg" alt="Nichanan Profile" class="profile-img">
-    <h1>นางสาวณิชานันท์ แสงกระจ่าง</h1>
-    <p>แฟ้มสะสมผลงานเพื่อการศึกษาต่อ สาขาสถาปัตยกรรมภายใน สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
+  <!-- 1. หน้าปก (Cover Layout แบบ 2 ฝั่ง ข้อมูลด้านซ้าย - รูปใหญ่เท่ากันด้านขวา) -->
+  <header id="cover">
+    <div class="cover-container">
+      <div class="cover-text-side">
+        <h1>PORTFOLIO</h1>
+        <p class="subtitle">✨ แฟ้มสะสมผลงาน ✨</p>
+        <div class="cover-details">
+          <p class="student-name">นางสาวณิชานันท์ แสงกระจ่าง</p>
+          <p class="student-level">นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
+          <p class="school-name"><b>โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</b></p>
+        </div>
+      </div>
+      <div class="cover-media-side">
+        <!-- ช่องใส่รูปขนาดเท่ากันทุกรูปในเว็บ -->
+        <div class="img-box">
+          <img src="IMG_0953.jpeg" alt="รูปหน้าปก" class="portfolio-img">
+        </div>
+      </div>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>แนะนำตัวและเป้าหมายการศึกษา</h2>
-    <p>
-      ดิฉันมีความหลงใหลในงานสถาปัตยกรรมภายใน (Interior Architecture) ซึ่งเป็นศาสตร์ที่ผสมผสานระหว่างศิลปะ ฟังก์ชันการใช้งาน และพฤติกรรมมนุษย์เข้าด้วยกัน ดิฉันมุ่งมั่นที่จะพัฒนาทักษะการออกแบบ การจัดสรรพื้นที่ (Spatial Planning) การถ่ายทอดบรรยากาศแสงและวัสดุผ่านสื่อดิจิทัล เพื่อสร้างสรรค์สภาพแวดล้อมที่ส่งเสริมคุณภาพชีวิตของผู้ใช้อาคาร
-    </p>
-    <p>
-      ด้วยความมุ่งมั่นและเป้าหมายอันชัดเจน ดิฉันจึงมีความประสงค์อย่างยิ่งที่จะเข้าศึกษาต่อในสาขาสถาปัตยกรรมภายใน คณะสถาปัตยกรรม ศิลปะและการออกแบบ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง เพื่อได้รับการหล่อหลอมความรู้และเติบโตเป็นนักออกแบบมืออาชีพในอนาคต
-    </p>
-  </section>
+  <main class="container">
 
-  <section id="projects">
-    <h2>ผลงานและการศึกษาเชิงสร้างสรรค์</h2>
-    <div class="project-grid">
-      <div class="project">
-        <h3>Spatial & Conceptual Design</h3>
-        <p>การศึกษาและออกแบบจำลองพื้นที่ภายใน โดยเน้นเรื่องการจัดวางฟังก์ชัน การคุมโทนบรรยากาศ (Mood & Tone) และการเลือกใช้วัสดุ</p>
-      </div>
-      <div class="project">
-        <h3>Digital Portfolio Website</h3>
-        <p>การนำเสนอผลงานและทักษะผ่านเว็บไซต์ดิจิทัล เพื่อถ่ายทอดแนวคิดและการสื่อสารทัศนียภาพทางสถาปัตยกรรมยุคใหม่</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── ส่วนแฟ้มสะสมผลงาน (Gallery Section) ─── -->
-  <section id="gallery">
-    <h2>แฟ้มสะสมผลงานภาพกิจกรรม</h2>
-    <div class="gallery-grid">
-      
-      <div class="gallery-card">
-        <img src="profile.jpg" alt="Perspective Sketching" class="gallery-img">
-        <div class="gallery-info">
-          <h4>Perspective & Sketching</h4>
-          <p>งานฝึกฝนการวาดภาพทัศนียภาพ ลายเส้น และการลงน้ำหนักแสงเงาพื้นที่ภายใน</p>
+    <!-- 2. คำนำ (Introduction) -->
+    <section id="introduction">
+      <h2>คำนำ</h2>
+      <div class="section-card flex-card">
+        <div class="card-text">
+          <p>แฟ้มสะสมผลงานเล่มนี้ จัดทำขึ้นเพื่อแนะนำตัวตน ประวัติการศึกษา ทักษะ และผลงานที่ผ่านมา เพื่อให้เห็นถึงความมุ่งมั่นและพัฒนาการของข้าพเจ้าในด้านต่างๆ อย่างชัดเจน</p>
+          <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่า แฟ้มสะสมผลงานเล่มนี้จะช่วยให้ผู้อ่านทุกท่านได้รู้จักตัวตน ศักยภาพ และความตั้งใจจริงของข้าพเจ้ามากยิ่งขึ้น</p>
+          <div class="signature-box">
+            <p><strong>จัดทำโดย:</strong> ณิชานันท์ แสงกระจ่าง</p>
+          </div>
+        </div>
+        <div class="card-media">
+          <div class="img-box">
+            <img src="intro-image.jpg" alt="คำนำ" class="portfolio-img">
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="gallery-card">
-        <img src="profile.jpg" alt="3D Modeling" class="gallery-img">
-        <div class="gallery-info">
-          <h4>3D & Material Concept</h4>
-          <p>การฝึกขึ้นโครงสร้างแบบจำลอง 3 มิติ และการจัดบอร์ดแสดงแนวคิดวัสดุ</p>
+    <!-- 3. ประวัติส่วนตัว (Profile) -->
+    <section id="profile">
+      <h2>ประวัติส่วนตัว</h2>
+      <div class="section-card flex-card reverse-mobile">
+        <div class="card-media">
+          <div class="img-box">
+            <img src="profile-full.jpg" alt="ประวัติส่วนตัว" class="portfolio-img">
+          </div>
+        </div>
+        <div class="card-text">
+          <ul class="info-list">
+            <li><strong>ชื่อ-นามสกุล:</strong> ณิชานันท์ แสงกระจ่าง</li>
+            <li><strong>ชื่อเล่น:</strong> ต้นน้ำ</li>
+            <li><strong>วัน/เดือน/ปีเกิด:</strong> 31 กรกฎาคม 2551</li>
+            <li><strong>งานอดิเรก:</strong> วาดรูป, ดูหนัง, ฟังเพลง</li>
+          </ul>
         </div>
       </div>
+    </section>
 
-      <div class="gallery-card">
-        <img src="profile.jpg" alt="Academic & Volunteer Activities" class="gallery-img">
-        <div class="gallery-info">
-          <h4>กิจกรรมวิชาการและจิตอาสา</h4>
-          <p>การเข้าร่วมกิจกรรมส่งเสริมทักษะทางศิลปะและการทำงานร่วมกับผู้อื่น</p>
+    <!-- 4. ประวัติการศึกษา (Education) -->
+    <section id="education">
+      <h2>ประวัติการศึกษา</h2>
+      <div class="section-card flex-card">
+        <div class="card-text">
+          <ul class="edu-info-list">
+            <li><strong>ระดับอนุบาล:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</li>
+            <li><strong>ระดับประถมศึกษาตอนต้น:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</li>
+            <li><strong>ระดับประถมศึกษาตอนปลาย:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</li>
+            <li><strong>ระดับมัธยมศึกษาตอนต้น:</strong> โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</li>
+            <li><strong>ระดับมัธยมศึกษาตอนปลาย:</strong> โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</li>
+          </ul>
+        </div>
+        <div class="card-media">
+          <div class="img-box">
+            <img src="high-school.jpg" alt="ประวัติการศึกษา" class="portfolio-img">
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-  
-  <section id="skills">
-    <h2>ทักษะและความสามารถเฉพาะทาง</h2>
-    <ul class="skills-list">
-      <li>Spatial Planning</li>
-      <li>Interior Perspective Sketching</li>
-      <li>3D Visualization & Concepts</li>
-      <li>Material & Mood Board Design</li>
-      <li>Human Scale & Ergonomics Basis</li>
-      <li>HTML & CSS Web Presentation</li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>
-      ช่องทางการติดต่อดิฉัน: <br>
-      โทรศัพท์: <a href="tel:0945485889">094-5485889</a> | 
-      อีเมล: <a href="mailto:nichanan.san31@gmail.com">nichanan.san31@gmail.com</a>
-    </p>
-    <p>&copy; <span id="year"></span> Nichanan Sangkrajang. Portfolio for KMITL Admission.</p>
-  </footer>
+    <!-- 5. กิจกรรมที่เข้าร่วม (4 กิจกรรม: บน 2 / ล่าง 2) -->
+    <section id="activities">
+      <h2>กิจกรรมที่เข้าร่วม</h2>
+      <div class="gallery-grid-2x2">
         
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>  
+        <!-- บน 1 -->
+        <div class="gallery-card">
+          <div class="img-box">
+            <img src="activity1.jpg" alt="กิจกรรมที่ 1" class="portfolio-img">
+          </div>
+          <div class="gallery-info">
+            <p class="activity-desc">เข้าร่วม "ค่ายติวสถาปัตยกรรมภายใน INT THA JUNGLE " ภาควิชาสถาปัตยกรรมภายใน สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
+          </div>
+        </div>
+
+        <!-- บน 2 -->
+        <div class="gallery-card">
+          <div class="img-box">
+            <img src="activity2.jpg" alt="กิจกรรมที่ 2" class="portfolio-img">
+          </div>
+          <div class="gallery-info">
+            <p class="activity-desc">เข้าร่วมการติวสถาปัตยกรรมภายใน สถาบัน sitestudio_arch เป็นระยะเวลา 2 เดือน</p>
+          </div>
+        </div>
+
+        <!-- ล่าง 1 -->
+        <div class="gallery-card">
+          <div class="img-box">
+            <img src="activity3.jpg" alt="กิจกรรมที่ 3" class="portfolio-img">
+          </div>
+          <div class="gallery-info">
+            <p class="activity-desc">เข้าร่วมการติวสถาปัตยกรรมภายใน สถาบัน archrepublic เป็นระยะเวลา 2 สัปดาห์</p>
+          </div>
+        </div>
+
+        <!-- ล่าง 2 -->
+        <div class="gallery-card">
+          <div class="img-box">
+            <img src="activity4.jpg" alt="กิจกรรมที่ 4" class="portfolio-img">
+          </div>
+          <div class="gallery-info">
+            <p class="activity-desc">ได้รับเลือกเป็นตัวแทนสตาฟเป็นนักเรียนจิตอาสาในงานเปิดบ้านวิชาการ “BBU JOB FAIR”</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. ความสนใจในด้านการศึกษาต่อ (Future Study) -->
+    <section id="future-study">
+      <h2>ความสนใจในด้านการศึกษาต่อ</h2>
+      
+      <div class="section-card future-wrapper">
+        <div class="future-intro">
+          <p>จากประสบการณ์การร่วมกิจกรรมและการติดตามผลงานจากสถาบันสถาปัตยกรรมต่างๆ ทำให้ข้าพเจ้าได้ค้นพบความชื่นชอบและความคลั่งไคล้ในการออกแบบพื้นที่ รวมถึงการติวสถาปัตย์และการลงมือทำผลงานจริงอย่างต่อเนื่อง ซึ่งทำให้ข้าพเจ้าได้พัฒนาทักษะทั้งการทำงานเดี่ยวและการประสานงานเป็นทีมอย่างมีประสิทธิภาพ ข้าพเจ้าจึงเลือกเรียนคณะสถาปัตยกรรมศาสตร์ สาขาวิชาการออกแบบภายใน ด้วยความตั้งใจที่จะศึกษาเรียนรู้และพัฒนาศักยภาพอย่างเต็มที่ เพื่อสร้างพื้นฐานองค์ความรู้และทักษะทางวิชาชีพที่เข้มแข็ง โดยมีเป้าหมายในอนาคตที่จะนำความรู้ความเชี่ยวชาญนี้ไปต่อยอดในสายงานการออกแบบภายใน และสร้างสรรค์พื้นที่ที่ตอบโจทย์การใช้งาน พร้อมทั้งส่งเสริมคุณภาพชีวิตที่ดีให้แก่ผู้ใช้งานและสังคมได้อย่างมีคุณค่าและยั่งยืน</p>
+        </div>
+
+        <div class="uni-grid">
+          <!-- มหาวิทยาลัยที่ 1 -->
+          <div class="uni-card">
+            <div class="img-box">
+              <img src="IMG_0961.webp" alt="สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง" class="portfolio-img">
+            </div>
+            <div class="uni-info">
+              <span class="badge">เป้าหมายทางการศึกษา</span>
+              <h4 class="faculty-name">คณะสถาปัตยกรรมศาสตร์ สาขาการออกแบบภายใน<br>สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</h4>
+            </div>
+          </div>
+
+          <!-- มหาวิทยาลัยที่ 2 -->
+          <div class="uni-card">
+            <div class="img-box">
+              <img src="IMG_0962.jpeg" alt="มหาวิทยาลัยศิลปากร" class="portfolio-img">
+            </div>
+            <div class="uni-info">
+              <span class="badge highlight">เป้าหมายทางการศึกษา</span>
+              <h4 class="faculty-name">คณะมัณฑนศิลป์ สาขาการออกแบบภายใน<br>มหาวิทยาลัยศิลปากร</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ความสามารถพิเศษ / ทักษะ -->
+    <section id="skills">
+      <h2>ความสามารถพิเศษ / ทักษะ</h2>
+      <div class="section-card">
+        <ul class="skills-tags-list">
+          <li class="tag-pink">ทักษะการถ่ายทอดความคิด</li>
+          <li class="tag-blue">ทักษะการทำงานร่วมกับผู้อื่น</li>
+          <li class="tag-green">ทักษะการบริหารการจัดการเวลาและความรับผิดชอบ</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ส่วนท้าย (Footer / ช่องทางการติดต่อ) -->
+  <footer>
+    <div class="footer-content">
+      <h3>ช่องทางการติดต่อ</h3>
+      <div class="contact-grid">
+        <p><strong>เบอร์โทรศัพท์:</strong> 0945485889</p>
+        <p><strong>อีเมล:</strong> <a href="mailto:nichanan.san31@gmail.com">nichanan.san31@gmail.com</a> | <a href="mailto:s34415@banbung.ac.th">s34415@banbung.ac.th</a></p>
+      </div>
+      <p class="copyright">&copy; <span id="year"></span> Nichanan Sangkrajang. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- เชื่อมต่อไฟล์ JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
