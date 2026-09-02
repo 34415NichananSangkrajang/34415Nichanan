@@ -1,130 +1,503 @@
-/* Reset */
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ─── สไตล์ธีม KMITL Orange & Silpakorn Green + Gold Sparkles ─── */
+:root {
+  /* โทนสีหลัก สจล. (สถาบันเทคโนโลยีพระเกล้าเจ้าคุณทหารลาดกระบัง) */
+  --kmitl-orange: #ff6600;       /* สีแสดหลัก สจล. */
+  --kmitl-orange-light: #ffe5d9; /* สีแสดพาสเทลอ่อนสำหรับพื้นหลัง */
+  --kmitl-orange-hover: #e05500;
+  
+  /* โทนสีหลัก ม.ศิลปากร (Silpakorn University) */
+  --su-green: #008075;           /* สีเขียวเวอร์ริเดียน (Viridian Green) ประจำ ม.ศิลปากร */
+  --su-green-light: #e0f2f1;     /* สีเขียวพาสเทลอ่อนสำหรับพื้นหลัง */
+  --su-green-hover: #005b53;
+
+  /* สีประดับและสีประกอบ */
+  --gold-accent: #f7b731;      
+  --gold-glow: rgba(247, 183, 49, 0.4);
+  
+  --card-bg: rgba(255, 255, 255, 0.90); 
+  --text-dark: #2b2d42;        
+  --text-muted: #5c677d;
+  
+  --primary-pink: var(--kmitl-orange); /* ทดแทนตำแหน่งสีหลักด้วยสีแสด สจล. */
+  --primary-blue: var(--su-green);     /* ทดแทนตำแหน่งสีรองด้วยสีเขียว ม.ศิลปากร */
 }
 
-/* Body */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Thonburi, Tahoma, sans-serif;
+  color: var(--text-dark);
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: #f5f7fa;
-    color: #333;
-    line-height: 1.6;
+  overflow-x: hidden;
+  /* พื้นหลังไล่เฉดสี แสด สจล. -> เขียว ศิลปากร */
+  background: linear-gradient(135deg, #fff3ec 0%, #e8f6f5 50%, #f0fdf4 100%);
+  background-attachment: fixed;
+  position: relative;
 }
 
-/* Header */
+/* ─── Sparkles Background ─── */
+.sparkles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  color: var(--gold-accent);
+  font-size: 1.2rem;
+  text-shadow: 0 0 8px var(--gold-glow), 0 0 15px #fff;
+  animation: floatSparkle 4s infinite ease-in-out alternate;
+}
+
+.s1 { top: 10%; left: 15%; animation-delay: 0s; }
+.s2 { top: 25%; left: 80%; animation-delay: 1s; font-size: 1.5rem; }
+.s3 { top: 50%; left: 10%; animation-delay: 0.5s; }
+.s4 { top: 70%; left: 85%; animation-delay: 1.5s; font-size: 1.8rem; }
+.s5 { top: 85%; left: 25%; animation-delay: 2s; }
+.s6 { top: 35%; left: 50%; animation-delay: 0.8s; }
+.s7 { top: 60%; left: 65%; animation-delay: 1.2s; }
+.s8 { top: 15%; left: 40%; animation-delay: 1.7s; }
+
+@keyframes floatSparkle {
+  0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0.4; }
+  100% { transform: translateY(-20px) scale(1.2) rotate(20deg); opacity: 1; }
+}
+
+/* ─── Navbar ─── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--kmitl-orange);
+  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.12);
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 14px 10px;
+}
+
+.nav-container a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 0.88rem;
+  transition: all 0.3s ease;
+}
+
+.nav-container a:hover {
+  color: var(--kmitl-orange);
+  text-shadow: 0 0 8px rgba(255, 102, 0, 0.3);
+}
+
+/* ─── ตัวกำหนดขนาดรูปภาพทุกรูปให้เท่ากันทั้งหมด ─── */
+.img-box {
+  width: 100%;
+  height: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 4px solid #fff;
+  background-color: #f0f4f8;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── 1. Header / หน้าปก ─── */
 header {
-    background: linear-gradient(135deg, #0077ff, #00c6ff);
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
+  padding: 130px 20px 50px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cover-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 24px;
+  border: 2px solid #fff;
+  box-shadow: 0 10px 30px rgba(255, 102, 0, 0.12);
+}
+
+.cover-text-side {
+  flex: 1;
+  text-align: left;
 }
 
 header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--kmitl-orange);
+  text-shadow: 2px 2px 0px #fff, 0 0 15px rgba(255, 102, 0, 0.2);
 }
 
-header p {
-    font-size: 1.2rem;
+header .subtitle {
+  font-size: 1.2rem;
+  color: var(--su-green);
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 20px;
 }
 
-/* Sections */
+.cover-details {
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.cover-details .student-name {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: var(--kmitl-orange);
+}
+
+.cover-details .student-level,
+.cover-details .student-plan {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.cover-details .school-name {
+  font-size: 1.05rem;
+  font-weight: 700 !important;
+  color: var(--text-dark);
+}
+
+.cover-details .school-name b {
+  font-weight: 700 !important;
+}
+
+.cover-media-side {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+/* ─── Layout General ─── */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
 section {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  scroll-margin-top: 90px;
+  padding: 40px 0;
 }
 
 section h2 {
-    color: #0077ff;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #0077ff;
-    display: inline-block;
-    padding-bottom: 5px;
+  font-size: 2rem;
+  border-left: 6px solid var(--kmitl-orange);
+  padding-left: 15px;
+  margin-bottom: 25px;
+  color: var(--kmitl-orange);
+  text-shadow: 1px 1px 0 #fff;
 }
 
-/* Projects */
-.project {
-    background: #f8f9fc;
-    padding: 20px;
-    border-left: 5px solid #0077ff;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    transition: 0.3s;
+.section-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 30px;
+  border: 2px solid #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
 }
 
-.project h3 {
-    margin-bottom: 8px;
-    color: #333;
+.flex-card {
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
-.project:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+.card-text {
+  flex: 1;
+  line-height: 1.8;
+  font-size: 1rem;
 }
 
-/* Skills (ส่วนที่เพิ่มเข้ามาเพื่อรองรับ <ul> <li> ใน HTML) */
-#skills ul {
-    list-style: none; /* เอาจุดกลมๆ ออก */
-    display: flex;
-    flex-wrap: wrap; /* ให้ปุ่มตกบรรทัดใหม่ได้ถ้าจอแคบ */
-    gap: 10px;       /* ระยะห่างระหว่างปุ่ม */
-    padding: 0;
+.card-text p {
+  margin-bottom: 12px;
 }
 
-#skills li {
-    background: #eef2ff;
-    color: #0077ff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: 0.2s;
+.card-media {
+  width: 320px;
+  flex-shrink: 0;
 }
 
-#skills li:hover {
-    background: #0077ff;
-    color: white;
+.signature-box {
+  margin-top: 20px;
+  text-align: right;
+  color: var(--kmitl-orange);
+  font-size: 1.05rem;
 }
 
-/* Footer Styling & Links */
+/* ─── Info List (ประวัติส่วนตัว) ─── */
+.info-list {
+  list-style: none;
+}
+
+.info-list li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.12);
+  padding-bottom: 6px;
+}
+
+.info-list strong {
+  color: var(--kmitl-orange);
+}
+
+/* ─── Badges ─── */
+.badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: var(--su-green-light);
+  color: var(--su-green);
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  border: 1px solid rgba(0, 128, 117, 0.3);
+}
+
+.badge.highlight {
+  background: var(--kmitl-orange-light);
+  color: var(--kmitl-orange);
+  border-color: rgba(255, 102, 0, 0.3);
+}
+
+/* ─── Education Section ─── */
+.edu-info-list {
+  list-style: none;
+}
+
+.edu-info-list li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.edu-info-list strong {
+  color: var(--su-green);
+}
+
+/* ─── Future Study (มหาวิทยาลัย) ─── */
+.future-intro {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 1.02rem;
+  text-indent: 2em;
+}
+
+.uni-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.uni-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--su-green-light);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.uni-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--kmitl-orange);
+}
+
+.uni-info {
+  padding: 18px;
+  text-align: center;
+}
+
+.faculty-name {
+  color: var(--kmitl-orange);
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-top: 5px;
+}
+
+/* ─── Gallery Grid 2x2 (กิจกรรม) ─── */
+.gallery-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.gallery-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(255, 102, 0, 0.18);
+  border-color: var(--kmitl-orange-light);
+}
+
+.gallery-info {
+  padding: 18px;
+}
+
+.activity-desc {
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+/* ─── Skills Section ─── */
+.skills-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.skills-tags-list li {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.skills-tags-list li:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* แท็กโทนสีแสด สจล. */
+.tag-pink {
+  background: var(--kmitl-orange-light);
+  color: var(--kmitl-orange-hover);
+  border: 2px solid #ffbd9d;
+}
+
+/* แท็กโทนสีเขียว ศิลปากร */
+.tag-blue {
+  background: var(--su-green-light);
+  color: var(--su-green-hover);
+  border: 2px solid #80cbc4;
+}
+
+/* แท็กโทนสีกระทิง/เขียวสว่างผสม */
+.tag-green {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 2px solid #a5d6a7;
+}
+
+/* ─── Footer ─── */
 footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: #777;
-    font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.92);
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+  border-top: 3px solid var(--kmitl-orange);
+  position: relative;
+  z-index: 1;
 }
 
-footer p {
-    margin-bottom: 8px;
+footer h3 {
+  color: var(--kmitl-orange);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.contact-grid {
+  line-height: 2;
+  font-size: 1rem;
 }
 
 footer a {
-    color: #0077ff;
-    text-decoration: none; /* เอาเส้นใต้ของลิงก์ออก */
-    font-weight: bold;
-    transition: 0.2s;
+  color: var(--su-green);
+  text-decoration: none;
+  font-weight: bold;
 }
 
 footer a:hover {
-    text-decoration: underline; /* ให้มีเส้นใต้ตอนเอาเมาส์มาชี้ */
-    color: #0056b3;
+  text-decoration: underline;
+  color: var(--kmitl-orange);
 }
 
-/* CSS สำหรับ Effect Fade In ตอน Scroll */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+.copyright {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 20px;
 }
 
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* ─── Responsive (มือถือและแท็บเล็ต) ─── */
+@media (max-width: 850px) {
+  .cover-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
 
+  .cover-text-side {
+    text-align: center;
+  }
+
+  .cover-media-side,
+  .card-media {
+    width: 100%;
+  }
+
+  .flex-card {
+    flex-direction: column;
+  }
+
+  .gallery-grid-2x2,
+  .uni-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+}
