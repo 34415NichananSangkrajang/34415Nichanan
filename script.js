@@ -4,7 +4,7 @@ if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 }
 
-// เอฟเฟกต์ Fade In ตอนเลื่อนหน้าจอ (Scroll Animation)
+// เอฟเฟกต์ Fade In เลื่อนแสดงผลเมื่อ Scroll สกอรล์ลงมา
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(entries => {
@@ -14,7 +14,7 @@ const observer = new IntersectionObserver(entries => {
         }
     });
 }, { 
-    threshold: 0.2 
+    threshold: 0.15 
 });
 
 sections.forEach(section => {
@@ -23,5 +23,4 @@ sections.forEach(section => {
 });
 
 // ข้อความต้อนรับใน Console
-console.log("Welcome to THANACHAI Portfolio");
-
+console.log("Welcome to Tunwa Pink-Cyan Portfolio!");
