@@ -385,6 +385,82 @@ section h2 {
   .flex-card {
     flex-direction: column;
   }
+  /* กรอบการแสดงผลส่วนทักษะและคอนแทค */
+.center-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* ปุ่มทักษะหัวกลมท้ายกลม */
+.skills-tags-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.skills-tags-list li {
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  width: fit-content;
+}
+
+.tag-pink { background-color: #ff758c; }
+.tag-blue { background-color: #4ea8de; }
+.tag-green { background-color: #2a9d8f; }
+
+/* ช่องทางการติดต่อ แบบตัวอักษรจัดกึ่งกลาง */
+.contact-text-block {
+  text-align: center;
+  width: 100%;
+  border-top: 2px dashed #eee;
+  padding-top: 30px;
+}
+
+.contact-text-block h3 {
+  font-size: 1.35rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.contact-text-block p {
+  font-size: 1.05rem;
+  color: #444;
+  margin: 8px 0;
+}
+
+.contact-text-block a {
+  color: #2a9d8f;
+  text-decoration: underline;
+}
+
+/* ข้อความ Copyright ด้านล่างสุด จัดกึ่งกลาง */
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 40px;
+}
+
+.copyright-text {
+  font-size: 0.95rem;
+  color: #555555;
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+}
 
   .gallery-grid-2x2 {
     grid-template-columns: 1fr;
