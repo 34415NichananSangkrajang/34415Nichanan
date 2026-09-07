@@ -5,66 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="แฟ้มสะสมผลงาน (Portfolio) - นางสาวณิชานันท์ แสงกระจ่าง">
   <title>แฟ้มสะสมผลงาน // PORTFOLIO - นางสาวณิชานันท์ แสงกระจ่าง</title>
+  
+  <!-- เชื่อมต่อไฟล์สไตล์ CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- แถบเมนูลอยแบบติดด้านบน (Navbar) -->
-  <header class="navbar">
-    <nav class="nav-container">
-      <button class="nav-btn active" onclick="showSection('cover')">หน้าปก</button>
-      <button class="nav-btn" onclick="showSection('introduction')">คำนำ</button>
-      <button class="nav-btn" onclick="showSection('profile')">ประวัติส่วนตัว</button>
-      <button class="nav-btn" onclick="showSection('education')">ประวัติการศึกษา</button>
-      <button class="nav-btn" onclick="showSection('activities')">กิจกรรมที่เข้าร่วม</button>  
-      <button class="nav-btn" onclick="showSection('works')">ผลงาน</button>  
-      <button class="nav-btn" onclick="showSection('future-study')">ความสนใจศึกษาต่อ</button>
-    </nav>
-  </header>
+  <!-- แถบเมนูลอยแบบโปร่งแสง (Navbar) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#cover">หน้าปก</a>
+      <a href="#introduction">คำนำ</a>
+      <a href="#profile">ประวัติส่วนตัว</a>
+      <a href="#education">ประวัติการศึกษา</a>
+      <a href="#activities">กิจกรรมที่เข้าร่วม</a>  
+      <a href="#works">ผลงาน</a>  
+      <a href="#future-study">ความสนใจศึกษาต่อ</a>
+      <a href="#skills">ความสามารถพิเศษ / ทักษะ</a>
+    </div>
+  </nav>
 
-  <main class="content-container">
-
-    <!-- 1. หน้าปก (Cover Layout) -->
-    <section id="cover" class="page-section active">
-      <div class="card cover-card">
-        <div class="cover-text-side">
-          <h1>PORTFOLIO</h1>
-          <p class="subtitle">แฟ้มสะสมผลงาน</p>
-          <div class="cover-details">
-            <p class="student-name">นางสาวณิชานันท์ แสงกระจ่าง</p>
-            <p class="student-level">นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
-            <p class="student-program">สายการเรียน วิทยาศาสตร์ - คณิตศาสตร์ (เตรียมวิศวะ)</p>
-            <p class="school-name"><b>โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</b></p>
-          </div>
-        </div>
-        <div class="cover-media-side">
-          <div class="img-box">
-            <img src="Image_20260903_153548_975.jpeg" alt="รูปหน้าปก" class="portfolio-img">
-          </div>
+  <!-- 1. หน้าปก (Cover Layout) -->
+  <header id="cover">
+    <div class="cover-container">
+      <div class="cover-text-side">
+        <h1>PORTFOLIO</h1>
+        <p class="subtitle"> แฟ้มสะสมผลงาน </p>
+        <div class="cover-details">
+          <p class="student-name">นางสาวณิชานันท์ แสงกระจ่าง</p>
+          <p class="student-level">นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
+          <p class="student-program">สายการเรียน วิทยาศาสตร์ - คณิตศาสตร์ (เตรียมวิศวะ)</p>
+          <p class="school-name"><b>โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</b></p>
         </div>
       </div>
-    </section>
+      <div class="cover-media-side">
+        <div class="img-box">
+          <img src="Image_20260903_153548_975.jpeg" alt="รูปหน้าปก" class="portfolio-img">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
 
     <!-- 2. คำนำ (Introduction) -->
-    <section id="introduction" class="page-section">
-      <div class="card">
-        <h2>คำนำ</h2>
-        <p>แฟ้มสะสมผลงานเล่มนี้ จัดทำขึ้นเพื่อนำเสนอตัวตน ประวัติการศึกษา ทักษะความสามารถ และผลงานการออกแบบที่ผ่านมารวมถึงความหลงใหลในงานออกแบบภายใน เพื่อสะท้อนให้เห็นถึงความมุ่งมั่น และแนวความคิดในการพัฒนาพื้นที่ให้เกิดประโยชน์สูงสุด</p>
-        <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่า แฟ้มสะสมผลงานเล่มนี้จะทำให้กรรมการทุกท่านได้เห็นถึงศักยภาพ ความคิดสร้างสรรค์ และความพร้อมของข้าพเจ้าในการเข้าศึกษาต่อในสาขาการออกแบบภายใน</p>
-        <div class="signature-box">
-          <p><strong>จัดทำโดย:</strong> นางสาวณิชานันท์ แสงกระจ่าง</p>
+    <section id="introduction">
+      <h2>คำนำ</h2>
+      <div class="section-card">
+        <div class="card-text">
+          <p>แฟ้มสะสมผลงานเล่มนี้ จัดทำขึ้นเพื่อนำเสนอตัวตน ประวัติการศึกษา ทักษะความสามารถ และผลงานการออกแบบที่ผ่านมารวมถึงความหลงใหลในงานออกแบบภายใน เพื่อสะท้อนให้เห็นถึงความมุ่งมั่น และแนวความคิดในการพัฒนาพื้นที่ให้เกิดประโยชน์สูงสุด</p>
+          <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่า แฟ้มสะสมผลงานเล่มนี้จะทำให้กรรมการทุกท่านได้เห็นถึงศักยภาพ ความคิดสร้างสรรค์ และความพร้อมของข้าพเจ้าในการเข้าศึกษาต่อในสาขาการออกแบบภายใน</p>
+          <div class="signature-box">
+            <p><strong>จัดทำโดย:</strong> นางสาวณิชานันท์ แสงกระจ่าง</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- 3. ประวัติส่วนตัว (Profile) -->
-    <section id="profile" class="page-section">
-      <div class="card">
-        <h2>ประวัติส่วนตัว</h2>
-        <div class="profile-flex">
+    <section id="profile">
+      <h2>ประวัติส่วนตัว</h2>
+      <div class="section-card flex-card reverse-mobile">
+        <div class="card-media">
           <div class="img-box">
             <img src="Image_20260903_153549_008.jpeg" alt="ประวัติส่วนตัว" class="portfolio-img">
           </div>
+        </div>
+        <div class="card-text">
           <ul class="info-list">
             <li><strong>ชื่อ-นามสกุล:</strong> นางสาวณิชานันท์ แสงกระจ่าง</li>
             <li><strong>ชื่อเล่น:</strong> ต้นน้ำ</li>
@@ -78,95 +85,169 @@
     </section>
 
     <!-- 4. ประวัติการศึกษา (Education) -->
-    <section id="education" class="page-section">
-      <div class="card">
-        <h2>ประวัติการศึกษา</h2>
-        <ul class="edu-info-list">
-          <li><strong>ระดับอนุบาล:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</li>
-          <li><strong>ระดับประถมศึกษาตอนต้น:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</li>
-          <li><strong>ระดับประถมศึกษาตอนปลาย:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</li>
-          <li><strong>ระดับมัธยมศึกษาตอนต้น:</strong> โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</li>
-          <li><strong>ระดับมัธยมศึกษาตอนปลาย:</strong> โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</li>
-        </ul>
+    <section id="education">
+      <h2>ประวัติการศึกษา</h2>
+      <div class="section-card">
+        <div class="card-text">
+          <ul class="edu-info-list">
+            <li>
+              <div class="edu-item">
+                <div><strong>ระดับอนุบาล:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</div>
+              </div>
+            </li>
+            <li>
+              <div class="edu-item">
+                <div><strong>ระดับประถมศึกษาตอนต้น:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</div>
+              </div>
+            </li>
+            <li>
+              <div class="edu-item">
+                <div><strong>ระดับประถมศึกษาตอนปลาย:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</div>
+              </div>
+            </li>
+            <li>
+              <div class="edu-item">
+                <div><strong>ระดับมัธยมศึกษาตอนต้น:</strong> โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</div>
+              </div>
+            </li>
+            <li>
+              <div class="edu-item">
+                <div><strong>ระดับมัธยมศึกษาตอนปลาย:</strong> โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <!-- 5. กิจกรรมที่เข้าร่วม -->
-    <section id="activities" class="page-section">
-      <div class="card">
-        <h2>กิจกรรมที่เข้าร่วม</h2>
-        <div class="gallery-grid">
-          <div class="gallery-card">
+    <section id="activities">
+      <h2>กิจกรรมที่เข้าร่วม</h2>
+      <div class="gallery-grid-2x2">
+        <div class="gallery-card">
+          <div class="img-box">
             <img src="Image_20260903_153403_953.jpeg" alt="กิจกรรมที่ 1" class="portfolio-img">
-            <p>เข้าร่วมค่ายติวสถาปัตยกรรมภายใน “INT THA JUNGLE" ภาควิชาสถาปัตยกรรมภายใน สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
           </div>
-          <div class="gallery-card">
+          <div class="gallery-info">
+            <p class="activity-desc">เข้าร่วมค่ายติวสถาปัตยกรรมภายใน “INT THA JUNGLE" ภาควิชาสถาปัตยกรรมภายใน สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="img-box">
             <img src="Image_20260903_153404_036.jpeg" alt="กิจกรรมที่ 2" class="portfolio-img">
-            <p>เข้าร่วมการติวสถาปัตยกรรมภายใน สถาบัน sitestudio_arch เป็นระยะเวลา 2 เดือน</p>
           </div>
-          <div class="gallery-card">
+          <div class="gallery-info">
+            <p class="activity-desc">เข้าร่วมการติวสถาปัตยกรรมภายใน สถาบัน sitestudio_arch เป็นระยะเวลา 2 เดือน</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="img-box">
             <img src="Image_20260903_153403_994.jpeg" alt="กิจกรรมที่ 3" class="portfolio-img">
-            <p>เข้าร่วมการติวสถาปัตยกรรมภายใน สถาบัน archrepublic เป็นระยะเวลา 2 สัปดาห์</p>
           </div>
-          <div class="gallery-card">
+          <div class="gallery-info">
+            <p class="activity-desc">เข้าร่วมการติวสถาปัตยกรรมภายใน สถาบัน archrepublic เป็นระยะเวลา 2 สัปดาห์</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="img-box">
             <img src="Image_20260903_153404_073.jpeg" alt="กิจกรรมที่ 4" class="portfolio-img">
-            <p>ได้รับเลือกเป็นตัวแทนนักเรียนจิตอาสาในงานเปิดบ้านวิชาการ “BBU JOB FAIR”</p>
+          </div>
+          <div class="gallery-info">
+            <p class="activity-desc">ได้รับเลือกเป็นตัวแทนนักเรียนจิตอาสาในงานเปิดบ้านวิชาการ “BBU JOB FAIR”</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 6. ผลงาน (Works) -->
-    <section id="works" class="page-section">
-      <div class="card">
-        <h2>ผลงาน</h2>
-        <div class="gallery-grid">
-          <div class="gallery-card">
+    <section id="works">
+      <h2>ผลงาน</h2>
+      <div class="gallery-grid-2x2">
+        <!-- แถวที่ 1 -->
+        <div class="gallery-card">
+          <div class="img-box">
             <img src="Image_20260903_153303_415.jpeg" alt="Perspective Sketch" class="portfolio-img">
-            <p><strong>Perspective Sketch</strong></p>
           </div>
-          <div class="gallery-card">
+          <div class="gallery-info">
+            <p class="activity-desc"><strong>Perspective Sketch</strong></p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="img-box">
             <img src="Image_20260903_153303_396.jpeg" alt="Drawing" class="portfolio-img">
-            <p><strong>Drawing</strong></p>
           </div>
-          <div class="gallery-card">
+          <div class="gallery-info">
+            <p class="activity-desc"><strong>Drawing</strong></p>
+          </div>
+        </div>
+
+        <!-- แถวที่ 2 -->
+        <div class="gallery-card">
+          <div class="img-box">
             <img src="Image_20260903_153303_348.jpeg" alt="Interior Watercolor" class="portfolio-img">
-            <p><strong>Interior Watercolor</strong></p>
           </div>
-          <div class="gallery-card">
+          <div class="gallery-info">
+            <p class="activity-desc"><strong>Interior Watercolor</strong></p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="img-box">
             <img src="Image_20260903_153303_457.jpeg" alt="Interior Mood Board" class="portfolio-img">
-            <p><strong>Interior Mood Board</strong></p>
           </div>
-          <div class="gallery-card">
+          <div class="gallery-info">
+            <p class="activity-desc"><strong>Interior Mood Board</strong></p>
+          </div>
+        </div>
+
+        <!-- แถวที่ 3 -->
+        <div class="gallery-card">
+          <div class="img-box">
             <img src="Image_20260903_153303_446.jpeg" alt="Chinese Mood Board" class="portfolio-img">
-            <p><strong>Chinese Mood Board</strong></p>
           </div>
-          <div class="gallery-card">
+          <div class="gallery-info">
+            <p class="activity-desc"><strong>Chinese Mood Board</strong></p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="img-box">
             <img src="Image_20260903_153303_483.jpeg" alt="St. Paul's" class="portfolio-img">
-            <p><strong>St. Paul's</strong></p>
           </div>
-          <div class="gallery-card">
+          <div class="gallery-info">
+            <p class="activity-desc"><strong>St. Paul's</strong></p>
+          </div>
+        </div>
+
+        <!-- แถวที่ 4 -->
+        <div class="gallery-card">
+          <div class="img-box">
             <img src="Image_20260903_153303_522.jpeg" alt="Kiosk Design" class="portfolio-img">
-            <p><strong>Kiosk Design</strong></p>
           </div>
-          <div class="gallery-card">
+          <div class="gallery-info">
+            <p class="activity-desc"><strong>Kiosk Design</strong></p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="img-box">
             <img src="Image_20260903_153303_555.jpeg" alt="LAN LOM TAO" class="portfolio-img">
-            <p><strong>LAN LOM TAO</strong></p>
+          </div>
+          <div class="gallery-info">
+            <p class="activity-desc"><strong>LAN LOM TAO</strong></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 7. ความสนใจศึกษาต่อ (Future Study) -->
-    <section id="future-study" class="page-section">
-      <div class="card">
-        <h2>ความสนใจในด้านการศึกษาต่อ</h2>
-        <p>จากประสบการณ์การร่วมกิจกรรมและการติดตามผลงานจากสถาบันสถาปัตยกรรมต่างๆ ทำให้ข้าพเจ้าได้ค้นพบความชื่นชอบและความคลั่งไคล้ในการออกแบบพื้นที่ รวมถึงการติวสถาปัตย์และการลงมือทำผลงานจริงอย่างต่อเนื่อง ซึ่งทำให้ข้าพเจ้าได้พัฒนาทักษะทั้งการทำงานเดี่ยวและการประสานงานเป็นทีมอย่างมีประสิทธิภาพ ข้าพเจ้าจึงเลือกเรียนคณะสถาปัตยกรรมศาสตร์ สาขาวิชาการออกแบบภายใน ด้วยความตั้งใจที่จะศึกษาเรียนรู้และพัฒนาศักยภาพอย่างเต็มที่ เพื่อสร้างพื้นฐานองค์ความรู้และทักษะทางวิชาชีพที่เข้มแข็ง โดยมีเป้าหมายในอนาคตที่จะนำความรู้ความเชี่ยวชาญนี้ไปต่อยอดในสายงานการออกแบบภายใน และสร้างสรรค์พื้นที่ที่ตอบโจทย์การใช้งาน พร้อมทั้งส่งเสริมคุณภาพชีวิตที่ดีให้แก่ผู้ใช้งาน</p>
-      </div>
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <!-- 7. ความสนใจในด้านการศึกษาต่อ (Future Study) -->
+    <section id="future-study">
+      <h2>ความสนใจในด้านการศึกษาต่อ</h2>
+      
+      <div class="section-card future-wrapper">
+        <div class="future-intro">
+          <p>จากประสบการณ์การร่วมกิจกรรมและการติดตามผลงานจากสถาบันสถาปัตยกรรมต่างๆ ทำให้ข้าพเจ้าได้ค้นพบความชื่นชอบและความคลั่งไคล้ในการออกแบบพื้นที่ รวมถึงการติวสถาปัตย์และการลงมือทำผลงานจริงอย่างต่อเนื่อง ซึ่งทำให้ข้าพเจ้าได้พัฒนาทักษะทั้งการทำงานเดี่ยวและการประสานงานเป็นทีมอย่างมีประสิทธิภาพ ข้าพเจ้าจึงเลือกเรียนคณะสถาปัตยกรรมศาสตร์ สาขาวิชาการออกแบบภายใน ด้วยความตั้งใจที่จะศึกษาเรียนรู้และพัฒนาศักยภาพอย่างเต็มที่ เพื่อสร้างพื้นฐานองค์ความรู้และทักษะทางวิชาชีพที่เข้มแข็ง โดยมีเป้าหมายในอนาคตที่จะนำความรู้ความเชี่ยวชาญนี้ไปต่อยอดในสายงานการออกแบบภายใน และสร้างสรรค์พื้นที่ที่ตอบโจทย์การใช้งาน พร้อมทั้งส่งเสริมคุณภาพชีวิตที่ดีให้แก่ผู้ใช้งานแล
