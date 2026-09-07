@@ -1,58 +1,64 @@
-// 1. แสดงปีปัจจุบันใน Footer อัตโนมัติ
-const yearElement = document.getElementById("year");
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-}
-
-// 2. ฟังก์ชันจัดการสลับหน้า (1 หัวข้อต่อ 1 หน้าเท่านั้น)
+// 1. ฟังก์ชันจัดการสลับหน้า (1 หัวข้อต่อ 1 หน้าเท่านั้น)
 function showSection(targetId) {
-    const sections = document.querySelectorAll("section");
+    const sections = document.querySelectorAll("main section");
     
-    // ซ่อนทุก Section และเอาคลาส show ออก
+    // ซ่อนทุก Section และเอาคลาส active ออก
     sections.forEach(section => {
-        section.style.display = "none";
-        section.classList.remove("show");
+        section.classList.remove("active");
     });
 
     // ดึง Section ที่ต้องการแสดง
     const targetSection = document.getElementById(targetId);
     if (targetSection) {
-        targetSection.style.display = "block";
-        
-        // ใส่ delay เล็กน้อยเพื่อให้ Animation Fade In ทำงานได้สมบูรณ์
-        setTimeout(() => {
-            targetSection.classList.add("show");
-        }, 20);
+        targetSection.classList.add("active");
     }
+
+    // อัปเดตสถานะปุ่ม Active ใน Navbar
+    updateNavActive(targetId);
 }
 
-// 3. ผูก Event Listener กับลิงก์เมนูนำทาง (Navigation Links)
-const navLinks = document.querySelectorAll("nav a");
-
-navLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        
-        // ดึง ID จาก href (ตัดเครื่องหมาย # ออก)
-        const targetId = link.getAttribute("href").replace("#", "");
-        showSection(targetId);
-    });
-});
-
-// 4. ตั้งค่าเริ่มต้นเมื่อเปิดเว็บ ให้แสดงเฉพาะหน้าแรก (เช่น คำนำ หรือ หน้าแรก)
-document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
+// 2. ฟังก์ชันอัปเดตสีปุ่ม Navbar เมื่อเปลี่ยนหน้า
+function updateNavActive(targetId) {
+    const navLinks = document.querySelectorAll(".nav-container a, .nav-container button");
     
-    // เพิ่ม class สำหรับเอฟเฟกต์ Fade In ให้ทุก section
-    sections.forEach(section => {
-        section.classList.add("fade-in");
+    navLinks.forEach(link => {
+        // ดึงค่า ID จาก href หรือ attribute
+        const href = link.getAttribute("href");
+        const linkId = href ? href.replace("#", "") : link.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
+        
+        if (linkId === targetId) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
+}
+
+// 3. ผูก Event Listener กับลิงก์เมนูนำทาง (กรณีใช้ <a> ใน Navbar)
+document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".nav-container a");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href").replace("#", "");
+            showSection(targetId);
+        });
     });
 
-    // แสดงเฉพาะ Section แรกสุดทันทีที่โหลดหน้าเว็บ
+    // แสดงเฉพาะหน้าปก (#cover) หรือ Section แรกสุดทันทีที่เปิดเว็บ
+    const sections = document.querySelectorAll("main section");
     if (sections.length > 0) {
-        showSection(sections[0].id);
+        const firstSectionId = sections[0].id || "cover";
+        showSection(firstSectionId);
+    }
+
+    // แสดงปีปัจจุบันใน Footer อัตโนมัติ (ถ้ามี element id="year")
+    const yearElement = document.getElementById("year");
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
     }
 });
 
 // ข้อความต้อนรับใน Console
-console.log("Welcome to Tunwa Pink-Cyan Portfolio!");
+console.log("Welcome to Nichanan's Portfolio!");
