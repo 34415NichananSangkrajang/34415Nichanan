@@ -6,12 +6,10 @@
   <meta name="description" content="แฟ้มสะสมผลงาน (Portfolio) - นางสาวณิชานันท์ แสงกระจ่าง">
   <title>แฟ้มสะสมผลงาน // PORTFOLIO - นางสาวณิชานันท์ แสงกระจ่าง</title>
   
-  <!-- เชื่อมต่อไฟล์สไตล์ CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Sparkles Background Effect -->
   <div class="sparkles-container">
     <div class="sparkle s1">✦</div>
     <div class="sparkle s2">✧</div>
@@ -23,7 +21,6 @@
     <div class="sparkle s8">✧</div>
   </div>
 
-  <!-- แถบเมนูลอยแบบโปร่งแสง (Navbar) -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="#cover" class="nav-btn active">หน้าปก</a>
@@ -38,10 +35,8 @@
     </div>
   </nav>
 
-  <!-- คอนเทนเนอร์หลักสำหรับจัดเก็บแต่ละหน้า -->
   <main class="content-container">
 
-    <!-- 1. หน้าปก (Cover Layout) -->
     <section id="cover" class="page-section active">
       <div class="section-card cover-container">
         <div class="cover-text-side">
@@ -62,7 +57,6 @@
       </div>
     </section>
 
-    <!-- 2. คำนำ (Introduction) -->
     <section id="introduction" class="page-section">
       <h2>คำนำ</h2>
       <div class="section-card">
@@ -76,7 +70,6 @@
       </div>
     </section>
 
-    <!-- 3. ประวัติส่วนตัว (Profile) -->
     <section id="profile" class="page-section">
       <h2>ประวัติส่วนตัว</h2>
       <div class="section-card flex-card">
@@ -98,7 +91,6 @@
       </div>
     </section>
 
-    <!-- 4. ประวัติการศึกษา (Education) -->
     <section id="education" class="page-section">
       <h2>ประวัติการศึกษา</h2>
       <div class="section-card">
@@ -114,7 +106,6 @@
       </div>
     </section>
 
-    <!-- 5. กิจกรรมที่เข้าร่วม -->
     <section id="activities" class="page-section">
       <h2>กิจกรรมที่เข้าร่วม</h2>
       <div class="gallery-grid-2x2">
@@ -156,7 +147,6 @@
       </div>
     </section>
 
-    <!-- 6. ผลงาน (Works) -->
     <section id="works" class="page-section">
       <h2>ผลงาน</h2>
       <div class="gallery-grid-2x2">
@@ -234,7 +224,6 @@
       </div>
     </section>
 
-    <!-- 7. ความสนใจในด้านการศึกษาต่อ (Future Study) -->
     <section id="future-study" class="page-section">
       <h2>ความสนใจในด้านการศึกษาต่อ</h2>
       
@@ -244,7 +233,6 @@
         </div>
 
         <div class="uni-grid">
-          <!-- มหาวิทยาลัยที่ 1 -->
           <div class="uni-card">
             <div class="img-box">
               <img src="Image_20260903_160420_331.jpeg" alt="สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง" class="portfolio-img">
@@ -255,7 +243,6 @@
             </div>
           </div>
 
-          <!-- มหาวิทยาลัยที่ 2 -->
           <div class="uni-card">
             <div class="img-box">
               <img src="Image_20260903_160420_312.jpeg" alt="มหาวิทยาลัยศิลปากร" class="portfolio-img">
@@ -269,21 +256,19 @@
       </div>
     </section>
 
-    <!-- 8. ความสามารถพิเศษ / ทักษะ -->
     <section id="skills" class="page-section">
       <h2>ความสามารถพิเศษ / ทักษะ</h2>
-      <div class="styled-card-box">
-        <ul class="skills-custom-list">
-          <li>ทักษะการถ่ายทอดความคิด</li>
-          <li>ทักษะการทำงานร่วมกับผู้อื่น</li>
-          <li>ทักษะการบริหารการจัดการเวลาและความรับผิดชอบ</li>
+      <div class="section-card center-card">
+        <ul class="skills-tags-list">
+          <li class="tag-pink">ทักษะการถ่ายทอดความคิด</li>
+          <li class="tag-blue">ทักษะการทำงานร่วมกับผู้อื่น</li>
+          <li class="tag-green">ทักษะการบริหารการจัดการเวลาและความรับผิดชอบ</li>
         </ul>
       </div>
     </section>
 
-    <!-- 9. ช่องทางการติดต่อ (Contact) - หน้าท้ายสุด -->
-    <section id="contact" class="page-section">
-      <div class="styled-card-box">
+    <section id="contact" class="page-section center-section">
+      <div class="styled-card-box contact-center-box">
         <h3 class="card-box-title">ช่องทางการติดต่อ</h3>
         <ul class="contact-detail-list">
           <li><strong>เบอร์โทรศัพท์ :</strong> <a href="tel:0945485889">0945485889</a></li>
@@ -295,14 +280,12 @@
 
   </main>
 
-  <!-- ส่วนท้าย (Footer) -->
   <footer>
     <div class="footer-content">
       <p class="copyright">&copy; <span id="year"></span> นางสาวณิชานันท์ แสงกระจ่าง. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- เชื่อมต่อไฟล์ JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
