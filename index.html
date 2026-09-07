@@ -11,45 +11,58 @@
 </head>
 <body>
 
+  <!-- Sparkles Background Effect -->
+  <div class="sparkles-container">
+    <div class="sparkle s1">✦</div>
+    <div class="sparkle s2">✧</div>
+    <div class="sparkle s3">✦</div>
+    <div class="sparkle s4">✧</div>
+    <div class="sparkle s5">✦</div>
+    <div class="sparkle s6">✧</div>
+    <div class="sparkle s7">✦</div>
+    <div class="sparkle s8">✧</div>
+  </div>
+
   <!-- แถบเมนูลอยแบบโปร่งแสง (Navbar) -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#cover">หน้าปก</a>
-      <a href="#introduction">คำนำ</a>
-      <a href="#profile">ประวัติส่วนตัว</a>
-      <a href="#education">ประวัติการศึกษา</a>
-      <a href="#activities">กิจกรรมที่เข้าร่วม</a>  
-      <a href="#works">ผลงาน</a>  
-      <a href="#future-study">ความสนใจศึกษาต่อ</a>
-      <a href="#skills">ความสามารถพิเศษ / ทักษะ</a>
+      <a href="#cover" class="nav-btn active">หน้าปก</a>
+      <a href="#introduction" class="nav-btn">คำนำ</a>
+      <a href="#profile" class="nav-btn">ประวัติส่วนตัว</a>
+      <a href="#education" class="nav-btn">ประวัติการศึกษา</a>
+      <a href="#activities" class="nav-btn">กิจกรรมที่เข้าร่วม</a>  
+      <a href="#works" class="nav-btn">ผลงาน</a>  
+      <a href="#future-study" class="nav-btn">ความสนใจศึกษาต่อ</a>
+      <a href="#skills" class="nav-btn">ความสามารถพิเศษ / ทักษะ</a>
     </div>
   </nav>
 
-  <!-- 1. หน้าปก (Cover Layout) -->
-  <header id="cover">
-    <div class="cover-container">
-      <div class="cover-text-side">
-        <h1>PORTFOLIO</h1>
-        <p class="subtitle"> แฟ้มสะสมผลงาน </p>
-        <div class="cover-details">
-          <p class="student-name">นางสาวณิชานันท์ แสงกระจ่าง</p>
-          <p class="student-level">นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
-          <p class="student-program">สายการเรียน วิทยาศาสตร์ - คณิตศาสตร์ (เตรียมวิศวะ)</p>
-          <p class="school-name"><b>โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</b></p>
-        </div>
-      </div>
-      <div class="cover-media-side">
-        <div class="img-box">
-          <img src="Image_20260903_153548_975.jpeg" alt="รูปหน้าปก" class="portfolio-img">
-        </div>
-      </div>
-    </div>
-  </header>
+  <!-- คอนเทนเนอร์หลักสำหรับจัดเก็บแต่ละหน้า -->
+  <main class="content-container">
 
-  <main class="container">
+    <!-- 1. หน้าปก (Cover Layout) -->
+    <section id="cover" class="page-section active">
+      <div class="section-card cover-container">
+        <div class="cover-text-side">
+          <h1>PORTFOLIO</h1>
+          <p class="subtitle">แฟ้มสะสมผลงาน</p>
+          <div class="cover-details">
+            <p class="student-name">นางสาวณิชานันท์ แสงกระจ่าง</p>
+            <p class="student-level">นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
+            <p class="student-program">สายการเรียน วิทยาศาสตร์ - คณิตศาสตร์ (เตรียมวิศวะ)</p>
+            <p class="school-name"><b>โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</b></p>
+          </div>
+        </div>
+        <div class="cover-media-side">
+          <div class="img-box">
+            <img src="Image_20260903_153548_975.jpeg" alt="รูปหน้าปก" class="portfolio-img">
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- 2. คำนำ (Introduction) -->
-    <section id="introduction">
+    <section id="introduction" class="page-section">
       <h2>คำนำ</h2>
       <div class="section-card">
         <div class="card-text">
@@ -63,9 +76,9 @@
     </section>
 
     <!-- 3. ประวัติส่วนตัว (Profile) -->
-    <section id="profile">
+    <section id="profile" class="page-section">
       <h2>ประวัติส่วนตัว</h2>
-      <div class="section-card flex-card reverse-mobile">
+      <div class="section-card flex-card">
         <div class="card-media">
           <div class="img-box">
             <img src="Image_20260903_153549_008.jpeg" alt="ประวัติส่วนตัว" class="portfolio-img">
@@ -85,43 +98,23 @@
     </section>
 
     <!-- 4. ประวัติการศึกษา (Education) -->
-    <section id="education">
+    <section id="education" class="page-section">
       <h2>ประวัติการศึกษา</h2>
       <div class="section-card">
         <div class="card-text">
           <ul class="edu-info-list">
-            <li>
-              <div class="edu-item">
-                <div><strong>ระดับอนุบาล:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</div>
-              </div>
-            </li>
-            <li>
-              <div class="edu-item">
-                <div><strong>ระดับประถมศึกษาตอนต้น:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</div>
-              </div>
-            </li>
-            <li>
-              <div class="edu-item">
-                <div><strong>ระดับประถมศึกษาตอนปลาย:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</div>
-              </div>
-            </li>
-            <li>
-              <div class="edu-item">
-                <div><strong>ระดับมัธยมศึกษาตอนต้น:</strong> โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</div>
-              </div>
-            </li>
-            <li>
-              <div class="edu-item">
-                <div><strong>ระดับมัธยมศึกษาตอนปลาย:</strong> โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</div>
-              </div>
-            </li>
+            <li><strong>ระดับอนุบาล:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</li>
+            <li><strong>ระดับประถมศึกษาตอนต้น:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</li>
+            <li><strong>ระดับประถมศึกษาตอนปลาย:</strong> โรงเรียนบ้านหนองเขิน (อินทรวิชัยบำรุง)</li>
+            <li><strong>ระดับมัธยมศึกษาตอนต้น:</strong> โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</li>
+            <li><strong>ระดับมัธยมศึกษาตอนปลาย:</strong> โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- 5. กิจกรรมที่เข้าร่วม -->
-    <section id="activities">
+    <section id="activities" class="page-section">
       <h2>กิจกรรมที่เข้าร่วม</h2>
       <div class="gallery-grid-2x2">
         <div class="gallery-card">
@@ -163,10 +156,9 @@
     </section>
 
     <!-- 6. ผลงาน (Works) -->
-    <section id="works">
+    <section id="works" class="page-section">
       <h2>ผลงาน</h2>
       <div class="gallery-grid-2x2">
-        <!-- แถวที่ 1 -->
         <div class="gallery-card">
           <div class="img-box">
             <img src="Image_20260903_153303_415.jpeg" alt="Perspective Sketch" class="portfolio-img">
@@ -185,7 +177,6 @@
           </div>
         </div>
 
-        <!-- แถวที่ 2 -->
         <div class="gallery-card">
           <div class="img-box">
             <img src="Image_20260903_153303_348.jpeg" alt="Interior Watercolor" class="portfolio-img">
@@ -204,7 +195,6 @@
           </div>
         </div>
 
-        <!-- แถวที่ 3 -->
         <div class="gallery-card">
           <div class="img-box">
             <img src="Image_20260903_153303_446.jpeg" alt="Chinese Mood Board" class="portfolio-img">
@@ -223,7 +213,6 @@
           </div>
         </div>
 
-        <!-- แถวที่ 4 -->
         <div class="gallery-card">
           <div class="img-box">
             <img src="Image_20260903_153303_522.jpeg" alt="Kiosk Design" class="portfolio-img">
@@ -245,7 +234,7 @@
     </section>
 
     <!-- 7. ความสนใจในด้านการศึกษาต่อ (Future Study) -->
-    <section id="future-study">
+    <section id="future-study" class="page-section">
       <h2>ความสนใจในด้านการศึกษาต่อ</h2>
       
       <div class="section-card future-wrapper">
@@ -280,7 +269,7 @@
     </section>
 
     <!-- 8. ความสามารถพิเศษ / ทักษะ -->
-    <section id="skills">
+    <section id="skills" class="page-section">
       <h2>ความสามารถพิเศษ / ทักษะ</h2>
       <div class="section-card">
         <ul class="skills-tags-list">
