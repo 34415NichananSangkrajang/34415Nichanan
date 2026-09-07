@@ -6,10 +6,12 @@
   <meta name="description" content="แฟ้มสะสมผลงาน (Portfolio) - นางสาวณิชานันท์ แสงกระจ่าง">
   <title>แฟ้มสะสมผลงาน // PORTFOLIO - นางสาวณิชานันท์ แสงกระจ่าง</title>
   
+  <!-- เชื่อมต่อไฟล์สไตล์ CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Sparkles Background Effect -->
   <div class="sparkles-container">
     <div class="sparkle s1">✦</div>
     <div class="sparkle s2">✧</div>
@@ -21,6 +23,7 @@
     <div class="sparkle s8">✧</div>
   </div>
 
+  <!-- แถบเมนูลอยแบบโปร่งแสง (Navbar) -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="#cover" class="nav-btn active">หน้าปก</a>
@@ -30,13 +33,14 @@
       <a href="#activities" class="nav-btn">กิจกรรมที่เข้าร่วม</a>  
       <a href="#works" class="nav-btn">ผลงาน</a>  
       <a href="#future-study" class="nav-btn">ความสนใจศึกษาต่อ</a>
-      <a href="#skills" class="nav-btn">ความสามารถพิเศษ / ทักษะ</a>
-      <a href="#contact" class="nav-btn">ช่องทางการติดต่อ</a>
+      <a href="#skills" class="nav-btn">ความสามารถพิเศษ / ช่องทางการติดต่อ</a>
     </div>
   </nav>
 
+  <!-- คอนเทนเนอร์หลักสำหรับจัดเก็บแต่ละหน้า -->
   <main class="content-container">
 
+    <!-- 1. หน้าปก (Cover Layout) -->
     <section id="cover" class="page-section active">
       <div class="section-card cover-container">
         <div class="cover-text-side">
@@ -57,6 +61,7 @@
       </div>
     </section>
 
+    <!-- 2. คำนำ (Introduction) -->
     <section id="introduction" class="page-section">
       <h2>คำนำ</h2>
       <div class="section-card">
@@ -70,6 +75,7 @@
       </div>
     </section>
 
+    <!-- 3. ประวัติส่วนตัว (Profile) -->
     <section id="profile" class="page-section">
       <h2>ประวัติส่วนตัว</h2>
       <div class="section-card flex-card">
@@ -91,6 +97,7 @@
       </div>
     </section>
 
+    <!-- 4. ประวัติการศึกษา (Education) -->
     <section id="education" class="page-section">
       <h2>ประวัติการศึกษา</h2>
       <div class="section-card">
@@ -106,6 +113,7 @@
       </div>
     </section>
 
+    <!-- 5. กิจกรรมที่เข้าร่วม -->
     <section id="activities" class="page-section">
       <h2>กิจกรรมที่เข้าร่วม</h2>
       <div class="gallery-grid-2x2">
@@ -147,6 +155,7 @@
       </div>
     </section>
 
+    <!-- 6. ผลงาน (Works) -->
     <section id="works" class="page-section">
       <h2>ผลงาน</h2>
       <div class="gallery-grid-2x2">
@@ -224,6 +233,7 @@
       </div>
     </section>
 
+    <!-- 7. ความสนใจในด้านการศึกษาต่อ (Future Study) -->
     <section id="future-study" class="page-section">
       <h2>ความสนใจในด้านการศึกษาต่อ</h2>
       
@@ -256,36 +266,36 @@
       </div>
     </section>
 
+    <!-- 8. ทักษะและความสามารถพิเศษ + ช่องทางการติดต่อด้านล่าง -->
     <section id="skills" class="page-section">
       <h2>ความสามารถพิเศษ / ทักษะ</h2>
+      
       <div class="section-card center-card">
+        <!-- กรอบปุ่มทักษะหัวกลมท้ายกลม -->
         <ul class="skills-tags-list">
           <li class="tag-pink">ทักษะการถ่ายทอดความคิด</li>
           <li class="tag-blue">ทักษะการทำงานร่วมกับผู้อื่น</li>
           <li class="tag-green">ทักษะการบริหารการจัดการเวลาและความรับผิดชอบ</li>
         </ul>
-      </div>
-    </section>
 
-    <section id="contact" class="page-section center-section">
-      <div class="styled-card-box contact-center-box">
-        <h3 class="card-box-title">ช่องทางการติดต่อ</h3>
-        <ul class="contact-detail-list">
-          <li><strong>เบอร์โทรศัพท์ :</strong> <a href="tel:0945485889">0945485889</a></li>
-          <li><strong>Gmail :</strong> <a href="mailto:s34415@banbung.ac.th">s34415@banbung.ac.th</a></li>
-          <li><strong>Gmail (ส่วนตัว) :</strong> <a href="mailto:nichanan.san31@gmail.com">nichanan.san31@gmail.com</a></li>
-        </ul>
+        <!-- ช่องทางการติดต่อ ตัวอักษรจัดกึ่งกลาง อยู่ด้านล่างทักษะ -->
+        <div class="contact-text-block">
+          <h3>ช่องทางการติดต่อ</h3>
+          <p><strong>เบอร์โทรศัพท์ :</strong> <a href="tel:0945485889">0945485889</a></p>
+          <p><strong>Gmail :</strong> <a href="mailto:s34415@banbung.ac.th">s34415@banbung.ac.th</a></p>
+          <p><strong>Gmail (ส่วนตัว) :</strong> <a href="mailto:nichanan.san31@gmail.com">nichanan.san31@gmail.com</a></p>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <footer>
-    <div class="footer-content">
-      <p class="copyright">&copy; <span id="year"></span> นางสาวณิชานันท์ แสงกระจ่าง. All rights reserved.</p>
-    </div>
+  <!-- ส่วนท้าย (Footer) ข้อความลิขสิทธิ์อยู่ล่างสุดกึ่งกลาง -->
+  <footer class="footer-bottom">
+    <p class="copyright-text">© 2026 นางสาวณิชานันท์ แสงกระจ่าง. All rights reserved.</p>
   </footer>
 
+  <!-- เชื่อมต่อไฟล์ JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
