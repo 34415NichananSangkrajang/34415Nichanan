@@ -510,3 +510,8 @@ section h2 {
     font-size: 2.5rem;
   }
 }
+/* ลบเส้นใต้หัวข้อและขอบล่างของหัวข้อทุกระดับ */
+h1, h2, h3, h4, h5, h6 {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
