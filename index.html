@@ -33,7 +33,7 @@
       <a href="#activities" class="nav-btn">กิจกรรมที่เข้าร่วม</a>  
       <a href="#works" class="nav-btn">ผลงาน</a>  
       <a href="#future-study" class="nav-btn">ความสนใจศึกษาต่อ</a>
-      <a href="#skills" class="nav-btn">ความสามารถพิเศษ / ช่องทางการติดต่อ</a>
+      <a href="#skills" class="nav-btn">ความสามารถพิเศษ / ทักษะ</a>
     </div>
   </nav>
 
@@ -43,20 +43,27 @@
     <!-- 1. หน้าปก (Cover Layout) -->
     <section id="cover" class="page-section active">
       <div class="section-card cover-container">
-        <div class="cover-text-side">
-          <h1>PORTFOLIO</h1>
-          <p class="subtitle">แฟ้มสะสมผลงาน</p>
-          <div class="cover-details">
-            <p class="student-name">นางสาวณิชานันท์ แสงกระจ่าง</p>
-            <p class="student-level">นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
-            <p class="student-program">สายการเรียน วิทยาศาสตร์ - คณิตศาสตร์ (เตรียมวิศวะ)</p>
-            <p class="school-name"><b>โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</b></p>
+        <div class="cover-main-wrapper" style="display: flex; gap: 20px; width: 100%;">
+          <div class="cover-text-side">
+            <h1>PORTFOLIO</h1>
+            <p class="subtitle">แฟ้มสะสมผลงาน</p>
+            <div class="cover-details">
+              <p class="student-name">นางสาวณิชานันท์ แสงกระจ่าง</p>
+              <p class="student-level">นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
+              <p class="student-program">สายการเรียน วิทยาศาสตร์ - คณิตศาสตร์ (เตรียมวิศวะ)</p>
+              <p class="school-name"><b>โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</b></p>
+            </div>
+          </div>
+          <div class="cover-media-side">
+            <div class="img-box">
+              <img src="Image_20260903_153548_975.jpeg" alt="รูปหน้าปก" class="portfolio-img">
+            </div>
           </div>
         </div>
-        <div class="cover-media-side">
-          <div class="img-box">
-            <img src="Image_20260903_153548_975.jpeg" alt="รูปหน้าปก" class="portfolio-img">
-          </div>
+
+        <!-- ช่องทางการติดต่อ (ย้ายมาไว้ด้านล่างของบล็อกหน้าปก โดยไม่ใช้หัวข้อ) -->
+        <div class="contact-info-block" style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.2); width: 100%; text-align: center;">
+          <p><strong>เบอร์โทรศัพท์ :</strong> <a href="tel:0945485889">0945485889</a> | <strong>Gmail :</strong> <a href="mailto:s34415@banbung.ac.th">s34415@banbung.ac.th</a> | <strong>Gmail (ส่วนตัว) :</strong> <a href="mailto:nichanan.san31@gmail.com">nichanan.san31@gmail.com</a></p>
         </div>
       </div>
     </section>
@@ -242,23 +249,25 @@
           <p>จากประสบการณ์การร่วมกิจกรรมและการติดตามผลงานจากสถาบันสถาปัตยกรรมต่างๆ ทำให้ข้าพเจ้าได้ค้นพบความชื่นชอบและความคลั่งไคล้ในการออกแบบพื้นที่ รวมถึงการติวสถาปัตย์และการลงมือทำผลงานจริงอย่างต่อเนื่อง ซึ่งทำให้ข้าพเจ้าได้พัฒนาทักษะทั้งการทำงานเดี่ยวและการประสานงานเป็นทีมอย่างมีประสิทธิภาพ ข้าพเจ้าจึงเลือกเรียนคณะสถาปัตยกรรมศาสตร์ สาขาวิชาการออกแบบภายใน ด้วยความตั้งใจที่จะศึกษาเรียนรู้และพัฒนาศักยภาพอย่างเต็มที่ เพื่อสร้างพื้นฐานองค์ความรู้และทักษะทางวิชาชีพที่เข้มแข็ง โดยมีเป้าหมายในอนาคตที่จะนำความรู้ความเชี่ยวชาญนี้ไปต่อยอดในสายงานการออกแบบภายใน และสร้างสรรค์พื้นที่ที่ตอบโจทย์การใช้งาน พร้อมทั้งส่งเสริมคุณภาพชีวิตที่ดีให้แก่ผู้ใช้งานและสังคมได้อย่างมีคุณค่าและยั่งยืน</p>
         </div>
 
-        <div class="uni-grid">
-          <div class="uni-card">
+        <!-- เป้าหมายทางการศึกษา ขึ้นเป็นหัวข้อใหญ่ริมสุดซ้ายมือ -->
+        <h3 class="target-title" style="text-align: left; width: 100%; margin-top: 25px; margin-bottom: 15px;">เป้าหมายทางการศึกษา</h3>
+
+        <!-- แสดงรูปภาพแบ่งเป็น 2 รูป ซ้าย-ขวา และข้อมูลอยู่ด้านล่างตรงกลาง -->
+        <div class="uni-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%;">
+          <div class="uni-card" style="text-align: center;">
             <div class="img-box">
               <img src="Image_20260903_160420_331.jpeg" alt="สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง" class="portfolio-img">
             </div>
-            <div class="uni-info">
-              <span class="badge">เป้าหมายทางการศึกษา</span>
+            <div class="uni-info" style="margin-top: 15px; text-align: center;">
               <h4 class="faculty-name">คณะสถาปัตยกรรมศาสตร์ สาขาการออกแบบภายใน<br>สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</h4>
             </div>
           </div>
 
-          <div class="uni-card">
+          <div class="uni-card" style="text-align: center;">
             <div class="img-box">
               <img src="Image_20260903_160420_312.jpeg" alt="มหาวิทยาลัยศิลปากร" class="portfolio-img">
             </div>
-            <div class="uni-info">
-              <span class="badge highlight">เป้าหมายทางการศึกษา</span>
+            <div class="uni-info" style="margin-top: 15px; text-align: center;">
               <h4 class="faculty-name">คณะมัณฑนศิลป์ สาขาการออกแบบภายใน<br>มหาวิทยาลัยศิลปากร</h4>
             </div>
           </div>
@@ -266,34 +275,38 @@
       </div>
     </section>
 
-    <!-- 8. ทักษะและความสามารถพิเศษ + ช่องทางการติดต่อด้านล่าง -->
+    <!-- 8. ทักษะและความสามารถพิเศษ -->
     <section id="skills" class="page-section">
       <h2>ความสามารถพิเศษ / ทักษะ</h2>
       
       <div class="section-card center-card">
-        <!-- กรอบปุ่มทักษะหัวกลมท้ายกลม -->
-        <ul class="skills-tags-list">
-          <li class="tag-pink">ทักษะการถ่ายทอดความคิด</li>
-          <li class="tag-blue">ทักษะการทำงานร่วมกับผู้อื่น</li>
-          <li class="tag-green">ทักษะการบริหารการจัดการเวลาและความรับผิดชอบ</li>
-        </ul>
+        <!-- แสดงรูปภาพ 3 รูปคู่กับข้อความทักษะ -->
+        <div class="skills-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%;">
+          <div class="skill-item" style="text-align: center;">
+            <div class="img-box">
+              <img src="skill_1.jpeg" alt="เล่นเครื่องดนตรี" class="portfolio-img">
+            </div>
+            <p style="margin-top: 10px; font-weight: bold;">1. เล่นเครื่องดนตรี</p>
+          </div>
 
-        <!-- ช่องทางการติดต่อ ตัวอักษรจัดกึ่งกลาง อยู่ด้านล่างทักษะ -->
-        <div class="contact-text-block">
-          <h3>ช่องทางการติดต่อ</h3>
-          <p><strong>เบอร์โทรศัพท์ :</strong> <a href="tel:0945485889">0945485889</a></p>
-          <p><strong>Gmail :</strong> <a href="mailto:s34415@banbung.ac.th">s34415@banbung.ac.th</a></p>
-          <p><strong>Gmail (ส่วนตัว) :</strong> <a href="mailto:nichanan.san31@gmail.com">nichanan.san31@gmail.com</a></p>
+          <div class="skill-item" style="text-align: center;">
+            <div class="img-box">
+              <img src="skill_2.jpeg" alt="เล่นกีฬาวอลเลย์บอล" class="portfolio-img">
+            </div>
+            <p style="margin-top: 10px; font-weight: bold;">2. เล่นกีฬาวอลเลย์บอล</p>
+          </div>
+
+          <div class="skill-item" style="text-align: center;">
+            <div class="img-box">
+              <img src="skill_3.jpeg" alt="การทำงานร่วมกับผู้อื่น" class="portfolio-img">
+            </div>
+            <p style="margin-top: 10px; font-weight: bold;">3. การทำงานร่วมกับผู้อื่น</p>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
-
-  <!-- ส่วนท้าย (Footer) ข้อความลิขสิทธิ์อยู่ล่างสุดกึ่งกลาง -->
-  <footer class="footer-bottom">
-    <p class="copyright-text">© 2026 นางสาวณิชานันท์ แสงกระจ่าง. All rights reserved.</p>
-  </footer>
 
   <!-- เชื่อมต่อไฟล์ JavaScript -->
   <script src="script.js"></script>
