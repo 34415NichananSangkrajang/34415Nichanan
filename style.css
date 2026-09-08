@@ -465,7 +465,47 @@ section h2 {
   .gallery-grid-2x2 {
     grid-template-columns: 1fr;
   }
+/* ลบเส้นใต้หัวข้อเมนู + ตั้งค่าสีดำปกติ + เอาเส้นใต้ลิงก์ออกทั้งหมด */
+.nav-btn {
+  text-decoration: none !important;
+  color: #000000 !important; /* สีดำปกติ */
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
 
+/* เมื่อ Hover หรือ กดคลิกเลือก (Active) ให้เปลี่ยนเป็นสีส้มแสด สถาบันลาดกระบัง */
+.nav-btn:hover,
+.nav-btn.active {
+  color: #ffffff !important;
+  background-color: #E05206 !important; /* สีส้มแสด ลาดกระบัง (KMITL Orange) */
+  font-weight: bold;
+}
+
+/* ตกแต่งบล็อกติดต่อใหม่ให้คุมโทนสวยงาม */
+.contact-container {
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid #E05206; /* ตัดขอบด้วยสีส้มสถาบัน */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-title {
+  color: #E05206;
+  font-weight: bold;
+}
+
+.contact-info-block a {
+  color: #E05206;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info-block a:hover {
+  text-decoration: underline;
+}
   .cover-text-side h1 {
     font-size: 2.5rem;
   }
